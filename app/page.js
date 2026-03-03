@@ -11,6 +11,7 @@ const getAllItems = async () => {
 };
 
 const ReadAllItem = async () => {
+  console.log(process.env.NEXT_PUBRIC_URL);
   const allItems = await getAllItems();
 
   return (
