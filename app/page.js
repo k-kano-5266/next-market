@@ -2,16 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getAllItems = async () => {
-  const response = await fetch("http://localhost:3000/api/item/readall", {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_URL}/api/item/readall`,
+    {
+      cache: "no-store",
+    },
+  );
   const jsonData = await response.json();
   const allItems = jsonData.allItems;
   return allItems;
 };
 
 const ReadAllItem = async () => {
-  console.log(process.env.NEXT_PUBRIC_URL);
   const allItems = await getAllItems();
 
   return (
